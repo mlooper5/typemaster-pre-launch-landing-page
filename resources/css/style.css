@@ -50,7 +50,13 @@ html {
   body {
     font-size: 1.6rem;
     line-height: 2.6rem;
+    color: var(--stone);
   }
+
+.increase {
+  font-weight: bold;
+  text-transform: uppercase;
+}
 
 /* buttons */
 
@@ -105,6 +111,22 @@ button {
   background-color: #03002d;
   box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
   transform: translateY(0);
+}
+
+header { 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.icon {
+  width: 65px;
+  height: 65px;
+  background-color: var(--tangerine);
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
