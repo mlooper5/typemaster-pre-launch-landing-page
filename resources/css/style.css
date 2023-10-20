@@ -67,7 +67,7 @@ p {
 .increase {
   font-weight: bold;
   text-transform: uppercase;
-  padding: 0 40px;
+  padding-left: 32px;
 }
 
 /* buttons */
@@ -139,12 +139,16 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 48px auto;
 }
 
 img {
   display: block;
-  max-width: 100%;
+}
+
+img.photo {
   border-radius: 20px;
+  
 }
 
 header img {
@@ -153,8 +157,66 @@ header img {
   width: 40px;
 }
 
-/* grid */
+/* mobile grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
+  gap: 24px;
+  margin: 24px;
+}
 
+.grid > *,
+.cta-content,
+.cta-img,
+.features > * {
+  grid-column: span 4;
+}
+
+.overview,
+.cta,
+.features {
+  display: inherit;
+  grid-template-columns: inherit;
+  gap: inherit;
+}
+
+.overview-content,
+.features {
+  grid-column: span 4;
+  text-align: center;
+}
+
+.overview img {
+  /* height: min(100%, 220px); <- this is what was causing all that space to be there*/
+  max-height: 220px; 
+  margin-bottom: 75px;
+}
+
+.cta-img {
+  max-width: unset;
+  height: 372px;
+}
+
+.overview img:nth-of-type(1) {
+  
+  justify-self: right;
+}
+
+.overview img:nth-of-type(2) {
+  grid-column: span 3;
+  object-fit: cover;
+}
+
+footer {
+  text-align: center;
+}
+
+@media screen and (min-width : 768px) { 
+  
+  
+}
+
+/* desktop grid 
 .grid {
   display: grid;
   grid-template-columns: repeat(12, 65px);
@@ -210,7 +272,7 @@ header img {
   right: 0;
   width: 20em;
   height: 20em;
-  background: rgba(250,140,50, 0.6); }
+}
 
 .overview img:nth-of-type(2) {
   grid-column: span 5; 
@@ -218,3 +280,4 @@ header img {
   height: 100%;
   
 }
+*/
