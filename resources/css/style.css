@@ -40,7 +40,7 @@ h3 {
 }
 
 h1 {
-  font-size: 5.6rem;
+  font-size: clamp(4.8rem, 4.2000rem + 1.6667vw, 5.6rem);
   line-height: 5.6rem;
 }
 
@@ -58,6 +58,7 @@ body {
   font-size: 1.6rem;
   line-height: 2.6rem;
   color: var(--stone);
+  margin: 0 auto;
 }
 
 p {
@@ -159,10 +160,12 @@ header img {
 
 /* mobile grid */
 .grid {
+  justify-content: center;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
   gap: 24px;
   margin: 24px;
+  
 }
 
 .grid > *,
@@ -195,6 +198,7 @@ header img {
 .cta-img {
   max-width: unset;
   height: 372px;
+  overflow: hidden;
 }
 
 .overview img:nth-of-type(1) {
