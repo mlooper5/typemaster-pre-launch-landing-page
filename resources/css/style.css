@@ -140,7 +140,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 48px auto;
+  margin: 40px auto;
 }
 
 img {
@@ -158,15 +158,17 @@ header img {
   width: 40px;
 }
 
-/* mobile grid */
+/* Grid Template - Main grid */
 .grid {
   justify-content: center;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
+  grid-template-columns: repeat(4, minmax(60px, 1fr));
   gap: 24px;
-  margin: 24px;
-  
+  margin: 24px auto;
+  max-width: 317px;
 }
+
+/* mobile */
 
 .grid > *,
 .cta-content,
@@ -183,26 +185,25 @@ header img {
   gap: inherit;
 }
 
-.overview-content,
-.features {
-  grid-column: span 4;
-  text-align: center;
-}
-
-.overview img {
-  /* height: min(100%, 220px); <- this is what was causing all that space to be there*/
-  max-height: 220px; 
-  margin-bottom: 75px;
-}
-
 .cta-img {
   max-width: unset;
   height: 372px;
   overflow: hidden;
 }
 
-.overview img:nth-of-type(1) {
+.overview-content,
+.features {
+  grid-column: span 4;
+  text-align: center;
+}
+
+ .overview img {
+  max-height: 220px; 
+  margin-bottom: 75px;
   
+}
+
+.overview img:nth-of-type(1) {
   justify-self: right;
 }
 
@@ -215,10 +216,84 @@ footer {
   text-align: center;
 }
 
-@media screen and (min-width : 768px) { 
+/* tablet */
+
+@media screen and (min-width : 700px) { 
   
+  .grid {
+    grid-template-columns: repeat(12, 1fr);
+    max-width: unset;
+    margin: 24px;
+  }
+
+  .grid > *,
+  .overview-content {
+    grid-column: span 12;
+  }
+
+  .overview-content,
+  .features {
+    text-align: left;
+  }
+
+  .features > * {
+    grid-column: span 6;
+  }
+
+  .cta-content {
+    grid-column: span 6;
+  }
+
+  .cta img {
+    grid-column: -6;
+  }
+
+  .overview img {
+    /* border: solid  purple 10px; */
+    margin: auto;
+    object-fit: cover;
+  }
+
+  .overview img:nth-of-type(1) {
+    grid-column: span 4;
+  }
+
+  .overview img:nth-of-type(2) {
+    grid-column: span 8;
+  }
+
+  .overview img {
+    max-height: unset; 
+    height: 80%;
+    width: 100%;
+  }
+
+  .overview-content {
+    display: inherit;
+    grid-template-columns: inherit;
+    gap: inherit;
+    align-items: center;
+  }
+
+   .overview-content > h2 {
+    grid-column: span 4;
+  }
+
+  .overview-content > p {
+    grid-column: span 7 / -1;
+  } 
+
+  .overview-content > * {
+    display: inline-block;
+  }
+
+  .icon {
+    margin: 40px 0;
+  }
   
 }
+
+
 
 /* desktop grid 
 .grid {
